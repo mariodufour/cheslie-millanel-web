@@ -295,15 +295,15 @@ export default function CheslieApp() {
               </button>
             </div>
 
-            <div className="flex-1 flex justify-center sm:justify-start items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#C7A982] shadow-sm bg-white">
+            <div className="flex-1 flex justify-center sm:justify-start items-center gap-2">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#C7A982] shadow-sm bg-white shrink-0">
                 <img
-                  src="/Logotipo botánico vintage Cheslie Millanel.png"
+                  src="/IMG_7253.jpeg"
                   alt="Cheslie Logo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover scale-110"
                 />
               </div>
-              <h1 className="text-3xl font-serif tracking-wider font-bold">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-serif tracking-wider font-bold whitespace-nowrap">
                 Cheslie <span className="font-light">Millanel</span>
               </h1>
             </div>
@@ -365,10 +365,19 @@ export default function CheslieApp() {
       <header className="relative pt-20 pb-16 md:pt-32 md:pb-24 bg-[#C7A982] overflow-hidden flex items-center justify-center min-h-[60vh]">
         {/* Decoración botánica izquierda (Estilo Minimalista, más grande y centrada) */}
         <div className="absolute left-[-20px] md:left-[15%] bottom-0 opacity-40 pointer-events-none w-40 md:w-64 text-[#4F5927] z-0">
-          <svg viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full transform scale-110">
+          <svg
+            viewBox="0 0 100 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-full h-full transform scale-110"
+          >
             {/* Tallo principal recto/ligeramente curvo */}
             <path d="M50,200 C48,150 48,100 40,50" />
-            
+
             {/* Flor inferior izquierda */}
             <path d="M48,140 C35,130 25,120 20,110" />
             <path d="M20,110 C18,105 20,100 22,100 C25,100 25,105 20,110" />
@@ -395,10 +404,19 @@ export default function CheslieApp() {
 
         {/* Decoración botánica derecha (Estilo Minimalista, más grande y centrada) */}
         <div className="absolute right-[-20px] md:right-[15%] bottom-0 opacity-40 pointer-events-none w-40 md:w-64 text-[#4F5927] z-0">
-          <svg viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full transform scale-110">
+          <svg
+            viewBox="0 0 100 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-full h-full transform scale-110"
+          >
             {/* Tallo principal curvo */}
             <path d="M40,200 C45,150 55,100 60,30" />
-            
+
             {/* Rama inferior derecha con hojas */}
             <path d="M45,160 C55,150 65,140 75,120" />
             <path d="M60,145 C65,150 70,148 72,143 C70,140 60,145 60,145" />
@@ -415,7 +433,7 @@ export default function CheslieApp() {
             <path d="M58,55 C65,60 70,55 72,50 C68,45 58,55 58,55" />
             <path d="M50,135 C42,130 38,135 36,140 C40,145 50,135 50,135" />
             <path d="M56,75 C48,70 42,75 40,80 C45,85 56,75 56,75" />
-            
+
             {/* Punta del tallo */}
             <path d="M60,30 C65,35 70,30 72,25 C68,20 60,30 60,30" />
             <path d="M60,30 C55,25 50,30 48,35 C52,40 60,30 60,30" />
