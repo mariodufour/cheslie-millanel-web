@@ -441,18 +441,19 @@ export default function CheslieApp() {
         </div>
 
         {/* Contenido Central */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-5xl font-serif text-[#4F5927] font-bold mb-4 leading-tight">
-            Descubrí tu esencia, <br /> viví en equilibrio
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center mt-8 sm:mt-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#4F5927] font-bold mb-4 sm:mb-6 leading-tight max-w-[90%]">
+            Descubrí tu esencia, <br className="hidden sm:block" /> viví en
+            equilibrio
           </h2>
-          <p className="text-lg text-[#4F5927] max-w-2xl opacity-90 mb-8 font-medium">
+          <p className="text-base sm:text-lg text-[#4F5927] max-w-xl opacity-90 mb-8 sm:mb-10 font-medium px-4">
             Cosmética consciente y aromaterapia diseñada para armonizar tu
             cuerpo y mente. Experimentá la colección exclusiva de Cheslie
             Millanel.
           </p>
           <a
             href="#destacados"
-            className="bg-[#4F5927] text-[#C7A982] px-8 py-3 rounded-full font-bold hover:bg-[#3f4720] transition-transform hover:scale-105 shadow-xl"
+            className="bg-[#4F5927] text-[#C7A982] px-6 sm:px-8 py-3 rounded-full font-bold hover:bg-[#3f4720] transition-transform hover:scale-105 shadow-xl text-sm sm:text-base"
           >
             Ver Ofertas
           </a>
