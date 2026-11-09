@@ -189,7 +189,7 @@ export default function CheslieApp() {
             <div className="flex-1 flex justify-center sm:justify-start items-center gap-2">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#C7A982] shadow-sm bg-white shrink-0">
                 <img
-                  src="/IMG_7253.jpeg"
+                  src="/Logo.png"
                   alt="Cheslie Logo"
                   className="w-full h-full object-cover scale-110"
                 />
