@@ -235,24 +235,48 @@ export default function CheslieApp() {
       {/* HERO SECTION */}
       <header className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-[#d0bfa8] overflow-hidden border-b-8 border-[#4F5927]">
         {/* Hojas decorativas SVG (Fondo) */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
+          {/* Rama Izquierda (Flores) */}
           <svg
-            className="absolute left-0 bottom-0 w-64 h-64 transform -translate-x-1/4 translate-y-1/4"
-            viewBox="0 0 100 100"
+            className="absolute left-0 bottom-0 w-48 h-64 sm:w-64 sm:h-80 transform -translate-x-4 sm:translate-x-4 translate-y-8"
+            viewBox="0 0 100 200"
+            fill="none"
+            stroke="#4F5927"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              d="M50,100 C50,50 10,60 10,20 C30,40 50,30 50,0 C50,30 70,40 90,20 C90,60 50,50 50,100 Z"
-              fill="#4F5927"
-            />
+            {/* Tallo principal */}
+            <path d="M50,200 Q30,120 45,40" />
+            {/* Ramas laterales */}
+            <path d="M42,120 Q60,105 65,85" />
+            <path d="M36,75 Q20,65 15,50" />
+            {/* Flor superior */}
+            <path d="M45,40 C35,20 50,15 45,40 C55,20 65,25 45,40 C35,35 30,50 45,40 C60,40 55,55 45,40" />
+            {/* Flor derecha */}
+            <path d="M65,85 C75,70 85,80 65,85 C80,95 75,105 65,85 C70,70 55,75 65,85" />
+            {/* Flor izquierda */}
+            <path d="M15,50 C5,40 15,30 15,50 C25,30 30,40 15,50 C5,45 10,60 15,50" />
           </svg>
+
+          {/* Rama Derecha (Hojas) */}
           <svg
-            className="absolute right-0 top-0 w-80 h-80 transform translate-x-1/4 -translate-y-1/4"
-            viewBox="0 0 100 100"
+            className="absolute right-0 top-0 w-56 h-72 sm:w-72 sm:h-96 transform translate-x-12 sm:translate-x-8 -translate-y-4"
+            viewBox="0 0 100 200"
+            fill="none"
+            stroke="#4F5927"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              d="M50,100 C50,50 10,60 10,20 C30,40 50,30 50,0 C50,30 70,40 90,20 C90,60 50,50 50,100 Z"
-              fill="#4F5927"
-            />
+            {/* Tallo principal */}
+            <path d="M50,200 Q70,100 40,10" />
+            {/* Hojas */}
+            <path d="M60,150 Q85,130 80,100 Q65,115 60,150" />
+            <path d="M55,100 Q30,90 25,60 Q45,75 55,100" />
+            <path d="M45,50 Q70,40 65,15 Q50,30 45,50" />
+            <path d="M63,130 Q80,150 90,140 Q75,120 63,130" />
+            <path d="M49,80 Q30,60 20,70 Q35,90 49,80" />
           </svg>
         </div>
 
