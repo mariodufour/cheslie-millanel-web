@@ -33,7 +33,7 @@ interface Product {
   imageUrl: string;
 }
 
-// Estructura de categorías tipo Acordeón
+// Estructura de categorías tipo Acordeón (Actualizada sin "Aromas")
 const MENU_CATEGORIES = [
   { label: "Todos", value: "Todos" },
   {
@@ -159,12 +159,10 @@ export default function CheslieApp() {
     (p) => activeCategory === "Todos" || p.category === activeCategory,
   );
 
-  // Productos destacados (con badge) o los primeros 4 por defecto
   let featuredProducts = products.filter((p) => p.badge);
   if (featuredProducts.length === 0 && products.length > 0) {
     featuredProducts = products.slice(0, 4);
   }
-  // Para el carrusel infinito
   const carouselItems = [
     ...featuredProducts,
     ...featuredProducts,
@@ -177,15 +175,17 @@ export default function CheslieApp() {
       <nav className="fixed top-0 left-0 w-full bg-[#4F5927] text-[#C7A982] z-40 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
+            {/* Botón de Menú Móvil */}
             <div className="flex items-center sm:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 hover:bg-[#3f4720] rounded-md transition-colors"
               >
-                <Menu size={24} />
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
 
+            {/* Logo y Título */}
             <div className="flex-1 flex justify-center sm:justify-start items-center gap-2">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#C7A982] shadow-sm bg-white shrink-0">
                 <img
@@ -199,6 +199,7 @@ export default function CheslieApp() {
               </h1>
             </div>
 
+            {/* Enlaces Escritorio */}
             <div className="hidden sm:flex items-center space-x-8">
               <a
                 href="#destacados"
@@ -214,6 +215,7 @@ export default function CheslieApp() {
               </a>
             </div>
 
+            {/* Carrito */}
             <div className="flex items-center">
               <button
                 onClick={() => setIsCartOpen(true)}
@@ -229,6 +231,26 @@ export default function CheslieApp() {
             </div>
           </div>
         </div>
+
+        {/* MENÚ MÓVIL DESPLEGABLE */}
+        {isMenuOpen && (
+          <div className="sm:hidden absolute top-20 left-0 w-full bg-[#4F5927] border-t border-[#C7A982]/30 px-4 pt-2 pb-6 shadow-xl flex flex-col gap-2 z-40">
+            <a
+              href="#destacados"
+              onClick={() => setIsMenuOpen(false)}
+              className="block px-4 py-3 text-[#C7A982] font-bold text-lg hover:bg-[#3f4720] hover:text-white rounded-lg transition-colors"
+            >
+              Destacados
+            </a>
+            <a
+              href="#catalogo"
+              onClick={() => setIsMenuOpen(false)}
+              className="block px-4 py-3 text-[#C7A982] font-bold text-lg hover:bg-[#3f4720] hover:text-white rounded-lg transition-colors"
+            >
+              Catálogo
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* HERO SECTION */}
@@ -245,16 +267,12 @@ export default function CheslieApp() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            {/* Tallo principal */}
             <path d="M 60 200 Q 40 120 55 40" />
-            {/* Ramitas laterales */}
             <path d="M 52 110 Q 75 95 80 80" />
             <path d="M 48 150 Q 25 140 20 125" />
             <path d="M 57 170 Q 80 160 85 145" />
-            {/* Hojitas sueltas en el tallo */}
             <path d="M 45 80 Q 30 75 35 60 Q 50 70 45 80" />
             <path d="M 50 135 Q 65 130 60 145 Q 45 140 50 135" />
-            {/* 4 Flores (con 3 pétalos cada una) */}
             <path d="M 55 40 C 45 25 65 25 55 40 C 45 45 35 30 55 40 C 65 45 75 30 55 40" />
             <path d="M 80 80 C 70 70 90 60 80 80 C 75 90 95 85 80 80 C 85 95 95 70 80 80" />
             <path d="M 20 125 C 10 115 30 105 20 125 C 15 135 35 130 20 125 C 25 140 5 115 20 125" />
@@ -271,25 +289,18 @@ export default function CheslieApp() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            {/* Tallo principal */}
             <path d="M 40 200 Q 60 120 45 40" />
-            {/* Ramitas */}
             <path d="M 48 180 Q 70 170 75 150" />
             <path d="M 52 140 Q 30 130 25 110" />
             <path d="M 49 100 Q 70 90 75 70" />
             <path d="M 52 70 Q 35 60 30 45" />
-            {/* Grupo Hojas 1 (Der Abajo) */}
             <path d="M 75 150 Q 90 140 85 130 Q 70 140 75 150" />
             <path d="M 65 160 Q 80 150 75 140 Q 60 150 65 160" />
-            {/* Grupo Hojas 2 (Izq Medio) */}
             <path d="M 25 110 Q 10 100 15 90 Q 30 100 25 110" />
             <path d="M 35 120 Q 20 110 25 100 Q 40 110 35 120" />
-            {/* Grupo Hojas 3 (Der Medio) */}
             <path d="M 75 70 Q 90 60 85 50 Q 70 60 75 70" />
             <path d="M 65 80 Q 80 70 75 60 Q 60 70 65 80" />
-            {/* Grupo Hojas 4 (Izq Arriba) */}
             <path d="M 30 45 Q 15 35 20 25 Q 35 35 30 45" />
-            {/* Hojas Punta Superior */}
             <path d="M 45 40 Q 35 20 50 15 Q 65 20 45 40" />
             <path d="M 45 40 Q 60 25 55 15 Q 40 25 45 40" />
           </svg>
@@ -324,7 +335,6 @@ export default function CheslieApp() {
           </h3>
         </div>
 
-        {/* Carrusel infinito */}
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-scroll hover:animation-pause gap-6 px-4">
             {carouselItems.map((product, idx) => (
@@ -551,7 +561,6 @@ export default function CheslieApp() {
             Cosmética consciente y bienestar para tu día a día.
           </p>
           <div className="flex justify-center gap-4 mb-8">
-            {/* Logo Instagram */}
             <a
               href="#"
               className="w-10 h-10 rounded-full bg-[#C7A982] text-[#4F5927] flex items-center justify-center hover:bg-white transition-colors"
@@ -572,8 +581,6 @@ export default function CheslieApp() {
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-
-            {/* Logo WhatsApp */}
             <a
               href="#"
               className="w-10 h-10 rounded-full bg-[#C7A982] text-[#4F5927] flex items-center justify-center hover:bg-white transition-colors"
