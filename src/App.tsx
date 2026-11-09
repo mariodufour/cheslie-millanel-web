@@ -46,7 +46,6 @@ const MENU_CATEGORIES = [
   },
   { label: "Niños", value: "Niños" },
   { label: "Maquillaje", value: "Maquillaje" },
-  { label: "Aromas", value: "Aromas" },
   { label: "Aromas para el hogar", value: "Aromas para el hogar" },
   {
     label: "Hogar",
