@@ -237,7 +237,7 @@ export default function CheslieApp() {
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40 overflow-hidden">
           {/* Rama Izquierda (Flores) */}
           <svg
-            className="absolute left-[-2%] md:left-[5%] lg:left-[15%] bottom-0 w-64 h-80 sm:w-80 sm:h-96 transform translate-y-4"
+            className="absolute -left-16 sm:left-[-2%] md:left-[5%] lg:left-[15%] bottom-0 w-56 h-72 sm:w-80 sm:h-96 transform translate-y-4"
             viewBox="0 0 100 200"
             fill="none"
             stroke="#4F5927"
@@ -263,7 +263,7 @@ export default function CheslieApp() {
 
           {/* Rama Derecha (Múltiples Hojas) */}
           <svg
-            className="absolute right-[-2%] md:right-[5%] lg:right-[15%] bottom-0 w-64 h-80 sm:w-80 sm:h-96 transform translate-y-4"
+            className="absolute -right-16 sm:right-[-2%] md:right-[5%] lg:right-[15%] bottom-0 w-56 h-72 sm:w-80 sm:h-96 transform translate-y-4"
             viewBox="0 0 100 200"
             fill="none"
             stroke="#4F5927"
