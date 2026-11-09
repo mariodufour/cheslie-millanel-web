@@ -235,48 +235,64 @@ export default function CheslieApp() {
       {/* HERO SECTION */}
       <header className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-[#d0bfa8] overflow-hidden border-b-8 border-[#4F5927]">
         {/* Hojas decorativas SVG (Fondo) */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40 overflow-hidden">
           {/* Rama Izquierda (Flores) */}
           <svg
-            className="absolute left-0 bottom-0 w-48 h-64 sm:w-64 sm:h-80 transform -translate-x-4 sm:translate-x-4 translate-y-8"
+            className="absolute left-[-2%] md:left-[5%] lg:left-[15%] bottom-0 w-64 h-80 sm:w-80 sm:h-96 transform translate-y-4"
             viewBox="0 0 100 200"
             fill="none"
             stroke="#4F5927"
-            strokeWidth="1.5"
+            strokeWidth="1.2"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
             {/* Tallo principal */}
-            <path d="M50,200 Q30,120 45,40" />
-            {/* Ramas laterales */}
-            <path d="M42,120 Q60,105 65,85" />
-            <path d="M36,75 Q20,65 15,50" />
-            {/* Flor superior */}
-            <path d="M45,40 C35,20 50,15 45,40 C55,20 65,25 45,40 C35,35 30,50 45,40 C60,40 55,55 45,40" />
-            {/* Flor derecha */}
-            <path d="M65,85 C75,70 85,80 65,85 C80,95 75,105 65,85 C70,70 55,75 65,85" />
-            {/* Flor izquierda */}
-            <path d="M15,50 C5,40 15,30 15,50 C25,30 30,40 15,50 C5,45 10,60 15,50" />
+            <path d="M 60 200 Q 40 120 55 40" />
+            {/* Ramitas laterales */}
+            <path d="M 52 110 Q 75 95 80 80" />
+            <path d="M 48 150 Q 25 140 20 125" />
+            <path d="M 57 170 Q 80 160 85 145" />
+            {/* Hojitas sueltas en el tallo */}
+            <path d="M 45 80 Q 30 75 35 60 Q 50 70 45 80" />
+            <path d="M 50 135 Q 65 130 60 145 Q 45 140 50 135" />
+            {/* 4 Flores (con 3 pétalos cada una) */}
+            <path d="M 55 40 C 45 25 65 25 55 40 C 45 45 35 30 55 40 C 65 45 75 30 55 40" />
+            <path d="M 80 80 C 70 70 90 60 80 80 C 75 90 95 85 80 80 C 85 95 95 70 80 80" />
+            <path d="M 20 125 C 10 115 30 105 20 125 C 15 135 35 130 20 125 C 25 140 5 115 20 125" />
+            <path d="M 85 145 C 75 135 95 125 85 145 C 80 155 100 150 85 145 C 90 160 100 135 85 145" />
           </svg>
 
-          {/* Rama Derecha (Hojas) */}
+          {/* Rama Derecha (Múltiples Hojas) */}
           <svg
-            className="absolute right-0 top-0 w-56 h-72 sm:w-72 sm:h-96 transform translate-x-12 sm:translate-x-8 -translate-y-4"
+            className="absolute right-[-2%] md:right-[5%] lg:right-[15%] bottom-0 w-64 h-80 sm:w-80 sm:h-96 transform translate-y-4"
             viewBox="0 0 100 200"
             fill="none"
             stroke="#4F5927"
-            strokeWidth="1.5"
+            strokeWidth="1.2"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
             {/* Tallo principal */}
-            <path d="M50,200 Q70,100 40,10" />
-            {/* Hojas */}
-            <path d="M60,150 Q85,130 80,100 Q65,115 60,150" />
-            <path d="M55,100 Q30,90 25,60 Q45,75 55,100" />
-            <path d="M45,50 Q70,40 65,15 Q50,30 45,50" />
-            <path d="M63,130 Q80,150 90,140 Q75,120 63,130" />
-            <path d="M49,80 Q30,60 20,70 Q35,90 49,80" />
+            <path d="M 40 200 Q 60 120 45 40" />
+            {/* Ramitas */}
+            <path d="M 48 180 Q 70 170 75 150" />
+            <path d="M 52 140 Q 30 130 25 110" />
+            <path d="M 49 100 Q 70 90 75 70" />
+            <path d="M 52 70 Q 35 60 30 45" />
+            {/* Grupo Hojas 1 (Der Abajo) */}
+            <path d="M 75 150 Q 90 140 85 130 Q 70 140 75 150" />
+            <path d="M 65 160 Q 80 150 75 140 Q 60 150 65 160" />
+            {/* Grupo Hojas 2 (Izq Medio) */}
+            <path d="M 25 110 Q 10 100 15 90 Q 30 100 25 110" />
+            <path d="M 35 120 Q 20 110 25 100 Q 40 110 35 120" />
+            {/* Grupo Hojas 3 (Der Medio) */}
+            <path d="M 75 70 Q 90 60 85 50 Q 70 60 75 70" />
+            <path d="M 65 80 Q 80 70 75 60 Q 60 70 65 80" />
+            {/* Grupo Hojas 4 (Izq Arriba) */}
+            <path d="M 30 45 Q 15 35 20 25 Q 35 35 30 45" />
+            {/* Hojas Punta Superior */}
+            <path d="M 45 40 Q 35 20 50 15 Q 65 20 45 40" />
+            <path d="M 45 40 Q 60 25 55 15 Q 40 25 45 40" />
           </svg>
         </div>
 
