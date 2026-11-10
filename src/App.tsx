@@ -144,13 +144,17 @@ export default function CheslieApp() {
   );
 
   const sendWhatsAppOrder = () => {
-    const phoneNumber = "549XXXXXXXXXX"; // Reemplaza con tu número
-    let message =
-      "Hola Cheslie Millanel, quiero hacer el siguiente pedido:%0A%0A";
+    const phoneNumber = "5493496467584";
+    let message = "¡Hola Cheslie!👋, quiero hacer el siguiente pedido🛍️:%0A%0A";
+
     cart.forEach((item) => {
-      message += `- ${item.quantity}x ${item.product.name} ($${item.product.price})%0A`;
+      // Agregamos la viñeta 🔸 antes de cada producto
+      message += `🔸 ${item.quantity}x ${item.product.name} ($${item.product.price})%0A`;
     });
-    message += `%0ATotal: $${cartTotal}`;
+
+    // Agregamos el emoji de la bolsa de dinero 💰, el total, y el agradecimiento ✨
+    message += `%0A💰 Total: $${cartTotal}%0A%0A¡Muchas gracias! ✨`;
+
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
@@ -561,8 +565,11 @@ export default function CheslieApp() {
             Cosmética consciente y bienestar para tu día a día.
           </p>
           <div className="flex justify-center gap-4 mb-8">
+            {/* Logo Instagram */}
             <a
-              href="#"
+              href="https://www.instagram.com/cheslie.millanel_"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-[#C7A982] text-[#4F5927] flex items-center justify-center hover:bg-white transition-colors"
             >
               <svg
@@ -581,8 +588,12 @@ export default function CheslieApp() {
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
+
+            {/* Logo WhatsApp */}
             <a
-              href="#"
+              href="https://wa.me/5493496467584"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-[#C7A982] text-[#4F5927] flex items-center justify-center hover:bg-white transition-colors"
             >
               <svg
