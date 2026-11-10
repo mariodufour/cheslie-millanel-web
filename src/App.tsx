@@ -527,9 +527,17 @@ export default function CheslieApp() {
                           {product.gender}
                         </span>
                       </div>
-                      <h4 className="font-bold text-gray-800 text-lg leading-tight mb-2 flex-1">
+
+                      {/* Título del producto */}
+                      <h4 className="font-bold text-gray-800 text-lg leading-tight mb-1">
                         {product.name}
                       </h4>
+
+                      {/* Descripción del producto */}
+                      <p className="text-sm text-gray-500 mb-3 flex-1 line-clamp-3">
+                        {product.description}
+                      </p>
+
                       <div className="flex items-end gap-2 mb-4 mt-auto">
                         <span className="text-2xl font-black text-[#4F5927]">
                           ${product.price.toLocaleString("es-AR")}
