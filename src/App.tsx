@@ -163,10 +163,7 @@ export default function CheslieApp() {
     (p) => activeCategory === "Todos" || p.category === activeCategory,
   );
 
-  let featuredProducts = products.filter((p) => p.badge);
-  if (featuredProducts.length === 0 && products.length > 0) {
-    featuredProducts = products.slice(0, 4);
-  }
+  const featuredProducts = products.filter((p) => p.badge);
   const carouselItems = [
     ...featuredProducts,
     ...featuredProducts,
@@ -331,62 +328,64 @@ export default function CheslieApp() {
       </header>
 
       {/* DESTACADOS */}
-      <section id="destacados" className="py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
-          <h3 className="text-2xl md:text-3xl font-serif text-[#4F5927] font-bold flex items-center justify-center gap-3">
-            <Star className="text-[#C7A982]" size={28} /> Ofertas & Destacados{" "}
-            <Star className="text-[#C7A982]" size={28} />
-          </h3>
-        </div>
+      {featuredProducts.length > 0 && (
+        <section id="destacados" className="py-16 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+            <h3 className="text-2xl md:text-3xl font-serif text-[#4F5927] font-bold flex items-center justify-center gap-3">
+              <Star className="text-[#C7A982]" size={28} /> Ofertas & Destacados{" "}
+              <Star className="text-[#C7A982]" size={28} />
+            </h3>
+          </div>
 
-        <div className="relative w-full overflow-hidden">
-          <div className="flex animate-scroll hover:animation-pause gap-6 px-4">
-            {carouselItems.map((product, idx) => (
-              <div
-                key={`${product.id}-${idx}`}
-                className="flex-none w-72 bg-[#F9F8F5] rounded-xl overflow-hidden shadow-md border border-[#C7A982]/20 group"
-              >
-                <div className="relative h-64 overflow-hidden bg-gray-200">
-                  {product.badge && (
-                    <span className="absolute top-3 left-3 bg-[#4F5927] text-[#C7A982] text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm flex items-center gap-1">
-                      <Tag size={12} /> {product.badge}
-                    </span>
-                  )}
-                  <img
-                    src={product.imageUrl}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <span className="text-[10px] font-bold text-[#4F5927] uppercase tracking-wider mb-1 block">
-                    {product.category}
-                  </span>
-                  <h4 className="font-bold text-gray-800 text-lg mb-1 truncate">
-                    {product.name}
-                  </h4>
-                  <div className="flex items-end gap-2 mb-4">
-                    <span className="text-xl font-black text-[#4F5927]">
-                      ${product.price.toLocaleString("es-AR")}
-                    </span>
-                    {product.oldPrice && (
-                      <span className="text-sm text-gray-400 line-through mb-0.5">
-                        ${product.oldPrice.toLocaleString("es-AR")}
+          <div className="relative w-full overflow-hidden">
+            <div className="flex animate-scroll hover:animation-pause gap-6 px-4">
+              {carouselItems.map((product, idx) => (
+                <div
+                  key={`${product.id}-${idx}`}
+                  className="flex-none w-72 bg-[#F9F8F5] rounded-xl overflow-hidden shadow-md border border-[#C7A982]/20 group"
+                >
+                  <div className="relative h-64 overflow-hidden bg-gray-200">
+                    {product.badge && (
+                      <span className="absolute top-3 left-3 bg-[#4F5927] text-[#C7A982] text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm flex items-center gap-1">
+                        <Tag size={12} /> {product.badge}
                       </span>
                     )}
+                    <img
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <button
-                    onClick={() => addToCart(product)}
-                    className="w-full bg-[#C7A982] hover:bg-[#b59871] text-[#4F5927] font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2"
-                  >
-                    <ShoppingCart size={18} /> Agregar
-                  </button>
+                  <div className="p-5">
+                    <span className="text-[10px] font-bold text-[#4F5927] uppercase tracking-wider mb-1 block">
+                      {product.category}
+                    </span>
+                    <h4 className="font-bold text-gray-800 text-lg mb-1 truncate">
+                      {product.name}
+                    </h4>
+                    <div className="flex items-end gap-2 mb-4">
+                      <span className="text-xl font-black text-[#4F5927]">
+                        ${product.price.toLocaleString("es-AR")}
+                      </span>
+                      {product.oldPrice && (
+                        <span className="text-sm text-gray-400 line-through mb-0.5">
+                          ${product.oldPrice.toLocaleString("es-AR")}
+                        </span>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => addToCart(product)}
+                      className="w-full bg-[#C7A982] hover:bg-[#b59871] text-[#4F5927] font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    >
+                      <ShoppingCart size={18} /> Agregar
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CATÁLOGO */}
       <section
@@ -534,7 +533,7 @@ export default function CheslieApp() {
                       </h4>
 
                       {/* Descripción del producto */}
-                      <p className="text-sm text-gray-500 mb-3 flex-1 line-clamp-3">
+                      <p className="text-sm text-gray-500 mb-3 flex-1 line-clamp-3 whitespace-pre-line">
                         {product.description}
                       </p>
 
